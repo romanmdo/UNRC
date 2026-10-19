@@ -1,0 +1,14 @@
+Ejercicio 6 - Practica 3:
+    - (2^29)/(2^9) = 1048576.0
+    - 2^20 = 1048576
+
+Ejercicio 7 - Practica 3:
+    - Va a devoler el nro. 3
+
+Ejercicio 8 - Practica 3:
+    - True && False = False
+    - sqrt 16 = 4
+    - 5 == 5 = True
+    - (2: []) = [2]
+    - (++) = error
+    - length [5,4,3,2,1] = 5
