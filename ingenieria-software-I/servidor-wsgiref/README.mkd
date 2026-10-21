@@ -1,0 +1,48 @@
+# Servidor 
+
+Tarea acerca de la creación de un servidor utilizando la librería `wsgiref` de Python.
+
+---
+
+## Diferencias entre métodos HTTP
+* **GET:** Sirve para obtener un elemento del servidor, similar a los métodos getters de Java.
+* **POST:** Sirve para "agregar" un elemento al servidor, similar a los métodos setters de Java.
+* **PATCH:** Sirve para modificar un elemento dentro del servidor.
+* **DELETE:** Sirve para borrar un elemento dentro del servidor.
+
+---
+
+## Idempotencia
+El método **POST** no es idempotente ya que, un método es considerado idempotente si produce el mismo resultado independientemente de cuántas veces se ejecute, pero, cada vez que ejecutamos POST no producimos el mismo resultado. Es por esto que POST no es idempotente.
+
+---
+
+## Tests
+Como no pude correr el script `.sh` por errores de compatibilidad, ejecuté todos los tests utilizando la herramienta **Postman**. El agente de Postman te permite enviar solicitudes API desde un navegador usando la aplicación web de Postman.
+
+### Test 1: Consultar lista vacía (GET)
+![Captura consultando lista vacía con GET](tests/test-1.png)
+
+### Test 2: Crear tarea (POST)
+![Captura creando la primera tarea con POST](tests/test-2.png)
+
+### Test 3: Crear otra tarea (POST)
+![Captura creando la segunda tarea con POST](tests/test-3.png)
+
+### Test 4: Consultar tareas creadas (GET)
+![Captura consultando todas las tareas con GET](tests/test-4.png)
+
+### Test 5: Consultar la tarea con el ID 1 (GET)
+![Captura consultando la tarea 1 con GET](tests/test-5.png)
+
+### Test 6: Modificar la tarea con el ID 1 (PATCH)
+![Captura modificando la tarea 1 con PATCH](tests/test-6.png)
+
+### Test 7: Borrar la tarea con el ID 1 (DELETE)
+![Captura borrando la tarea 1 con DELETE](tests/test-7.png)
+
+### Test 8: Consultar la tarea con el ID 1 (GET)
+![Captura consultando la tarea borrada y recibiendo 404](tests/test-8.png)
+
+### Test 9: Consultar una tarea inexistente (GET)
+![Captura consultando ID inexistente y recibiendo 404](tests/test-9.png)
