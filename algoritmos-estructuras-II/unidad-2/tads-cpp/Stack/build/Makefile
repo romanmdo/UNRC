@@ -185,17 +185,30 @@ MiPrograma/fast:
 .PHONY : MiPrograma/fast
 
 #=============================================================================
-# Target rules for targets named TestsPila
+# Target rules for targets named ArrayStackTest
 
 # Build rule for target.
-TestsPila: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestsPila
-.PHONY : TestsPila
+ArrayStackTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ArrayStackTest
+.PHONY : ArrayStackTest
 
 # fast build rule for target.
-TestsPila/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestsPila.dir/build.make CMakeFiles/TestsPila.dir/build
-.PHONY : TestsPila/fast
+ArrayStackTest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArrayStackTest.dir/build.make CMakeFiles/ArrayStackTest.dir/build
+.PHONY : ArrayStackTest/fast
+
+#=============================================================================
+# Target rules for targets named LinkedStackTest
+
+# Build rule for target.
+LinkedStackTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 LinkedStackTest
+.PHONY : LinkedStackTest
+
+# fast build rule for target.
+LinkedStackTest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinkedStackTest.dir/build.make CMakeFiles/LinkedStackTest.dir/build
+.PHONY : LinkedStackTest/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -273,29 +286,53 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiPrograma.dir/build.make CMakeFiles/MiPrograma.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-tests/tads/StackTest.o: tests/tads/StackTest.cpp.o
-.PHONY : tests/tads/StackTest.o
+tests/tads/ArrayStackTest.o: tests/tads/ArrayStackTest.cpp.o
+.PHONY : tests/tads/ArrayStackTest.o
 
 # target to build an object file
-tests/tads/StackTest.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestsPila.dir/build.make CMakeFiles/TestsPila.dir/tests/tads/StackTest.cpp.o
-.PHONY : tests/tads/StackTest.cpp.o
+tests/tads/ArrayStackTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArrayStackTest.dir/build.make CMakeFiles/ArrayStackTest.dir/tests/tads/ArrayStackTest.cpp.o
+.PHONY : tests/tads/ArrayStackTest.cpp.o
 
-tests/tads/StackTest.i: tests/tads/StackTest.cpp.i
-.PHONY : tests/tads/StackTest.i
+tests/tads/ArrayStackTest.i: tests/tads/ArrayStackTest.cpp.i
+.PHONY : tests/tads/ArrayStackTest.i
 
 # target to preprocess a source file
-tests/tads/StackTest.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestsPila.dir/build.make CMakeFiles/TestsPila.dir/tests/tads/StackTest.cpp.i
-.PHONY : tests/tads/StackTest.cpp.i
+tests/tads/ArrayStackTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArrayStackTest.dir/build.make CMakeFiles/ArrayStackTest.dir/tests/tads/ArrayStackTest.cpp.i
+.PHONY : tests/tads/ArrayStackTest.cpp.i
 
-tests/tads/StackTest.s: tests/tads/StackTest.cpp.s
-.PHONY : tests/tads/StackTest.s
+tests/tads/ArrayStackTest.s: tests/tads/ArrayStackTest.cpp.s
+.PHONY : tests/tads/ArrayStackTest.s
 
 # target to generate assembly for a file
-tests/tads/StackTest.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestsPila.dir/build.make CMakeFiles/TestsPila.dir/tests/tads/StackTest.cpp.s
-.PHONY : tests/tads/StackTest.cpp.s
+tests/tads/ArrayStackTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArrayStackTest.dir/build.make CMakeFiles/ArrayStackTest.dir/tests/tads/ArrayStackTest.cpp.s
+.PHONY : tests/tads/ArrayStackTest.cpp.s
+
+tests/tads/LinkedStackTest.o: tests/tads/LinkedStackTest.cpp.o
+.PHONY : tests/tads/LinkedStackTest.o
+
+# target to build an object file
+tests/tads/LinkedStackTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinkedStackTest.dir/build.make CMakeFiles/LinkedStackTest.dir/tests/tads/LinkedStackTest.cpp.o
+.PHONY : tests/tads/LinkedStackTest.cpp.o
+
+tests/tads/LinkedStackTest.i: tests/tads/LinkedStackTest.cpp.i
+.PHONY : tests/tads/LinkedStackTest.i
+
+# target to preprocess a source file
+tests/tads/LinkedStackTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinkedStackTest.dir/build.make CMakeFiles/LinkedStackTest.dir/tests/tads/LinkedStackTest.cpp.i
+.PHONY : tests/tads/LinkedStackTest.cpp.i
+
+tests/tads/LinkedStackTest.s: tests/tads/LinkedStackTest.cpp.s
+.PHONY : tests/tads/LinkedStackTest.s
+
+# target to generate assembly for a file
+tests/tads/LinkedStackTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinkedStackTest.dir/build.make CMakeFiles/LinkedStackTest.dir/tests/tads/LinkedStackTest.cpp.s
+.PHONY : tests/tads/LinkedStackTest.cpp.s
 
 # Help Target
 help:
@@ -310,8 +347,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... ArrayStackTest"
+	@echo "... LinkedStackTest"
 	@echo "... MiPrograma"
-	@echo "... TestsPila"
 	@echo "... gmock"
 	@echo "... gmock_main"
 	@echo "... gtest"
@@ -319,9 +357,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... tests/tads/StackTest.o"
-	@echo "... tests/tads/StackTest.i"
-	@echo "... tests/tads/StackTest.s"
+	@echo "... tests/tads/ArrayStackTest.o"
+	@echo "... tests/tads/ArrayStackTest.i"
+	@echo "... tests/tads/ArrayStackTest.s"
+	@echo "... tests/tads/LinkedStackTest.o"
+	@echo "... tests/tads/LinkedStackTest.i"
+	@echo "... tests/tads/LinkedStackTest.s"
 .PHONY : help
 
 

@@ -1,5 +1,6 @@
 /home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/CMakeFiles/MiPrograma.dir
-/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/CMakeFiles/TestsPila.dir
+/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/CMakeFiles/ArrayStackTest.dir
+/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/CMakeFiles/LinkedStackTest.dir
 /home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/CMakeFiles/test.dir
 /home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/CMakeFiles/edit_cache.dir
 /home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/CMakeFiles/rebuild_cache.dir

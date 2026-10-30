@@ -1,5 +1,0 @@
-if(EXISTS "/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/TestsPila_e3b0c442_tests.cmake")
-  include("/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/TestsPila_e3b0c442_tests.cmake")
-else()
-  add_test(TestsPila_NOT_BUILT TestsPila_NOT_BUILT)
-endif()

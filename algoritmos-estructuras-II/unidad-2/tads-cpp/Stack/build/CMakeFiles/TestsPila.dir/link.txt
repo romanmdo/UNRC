@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/TestsPila.dir/link.d CMakeFiles/TestsPila.dir/tests/tads/StackTest.cpp.o -o TestsPila  lib/libgtest_main.a lib/libgtest.a

@@ -38,19 +38,33 @@ public:
     }
 
     void push(T item) override {
-        // TODO: Verificar si size_ == capacity. Si es asi, hacer resize.
-        // Luego insertar 'item' en el array y aumentar size_.
+        if (size_ == capacity)
+        {
+            resize(2  * capacity);
+        }
+        
+        array[size_] = item;
+        size_++;
     }
 
     T pop() override {
-        // TODO: Verificar isEmpty(). Si es asi, lanzar std::out_of_range.
-        // Guardar el tope, decrementar size_, y retornar el elemento.
-        return T(); // Placeholder
+        if (isEmpty())
+        {
+            throw std::invalid_argument("La pila esta vacia");
+        }
+
+        
+        T elemento = array[size_ - 1];
+
+        // Al hacer size--, el elemento anterior queda inaccesible.
+        size_--;
+
+        return T(elemento);
     }
 
     T top() const override {
-        // TODO: Verificar isEmpty(). Retornar el elemento en size_ - 1.
-        return T(); // Placeholder
+        T elemento = array[size_ - 1];
+        return T(elemento); 
     }
 
     int size() const override {

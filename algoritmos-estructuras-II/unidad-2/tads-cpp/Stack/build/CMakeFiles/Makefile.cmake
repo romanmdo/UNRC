@@ -166,8 +166,10 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/4.4.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.4.5/CMakeCXXCompiler.cmake"
   "_deps/googletest-subbuild/CMakeLists.txt"
-  "TestsPila_e3b0c442_discovery.cmake"
-  "TestsPila_e3b0c442_include.cmake"
+  "ArrayStackTest_e3b0c442_discovery.cmake"
+  "ArrayStackTest_e3b0c442_include.cmake"
+  "LinkedStackTest_e3b0c442_discovery.cmake"
+  "LinkedStackTest_e3b0c442_include.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "CMakeFiles/4.4.5/CMakeCCompiler.cmake"
   "CMakeFiles/4.4.5/CMakeCCompiler.cmake"
@@ -186,7 +188,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/MiPrograma.dir/DependInfo.cmake"
-  "CMakeFiles/TestsPila.dir/DependInfo.cmake"
+  "CMakeFiles/ArrayStackTest.dir/DependInfo.cmake"
+  "CMakeFiles/LinkedStackTest.dir/DependInfo.cmake"
   "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
   "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
