@@ -1,5 +1,3 @@
-package main.java;
-
 public interface Lista<T>
 {
     public T setInicio(T e);

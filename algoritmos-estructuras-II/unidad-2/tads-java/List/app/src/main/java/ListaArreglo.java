@@ -1,5 +1,3 @@
-package main.java;
-
 public class ListaArreglo<T> implements Lista<T> 
 {
     private static final int INIT_CAPACITY = 8;
@@ -25,7 +23,7 @@ public class ListaArreglo<T> implements Lista<T>
     {
         if(indice >= INIT_CAPACITY)
         {
-            throw new IllegalArgumentException('Error: Indice no valido');
+            throw new IllegalArgumentException("Error: Indice no valido");
         }
 
         T dato = array[indice];
@@ -52,7 +50,7 @@ public class ListaArreglo<T> implements Lista<T>
     {
         if(indice >= INIT_CAPACITY)
         {
-            throw new IllegalArgumentException('Error: Indice no valido');
+            throw new IllegalArgumentException("Error: Indice no valido");
         }
 
         return array[indice];
@@ -66,16 +64,16 @@ public class ListaArreglo<T> implements Lista<T>
     }
     
     @Override
-    public void addInicio()
+    public void addInicio(T e)
     {
-        if(size == INIT_CAPACITY)
-        {
-            error;
-        }
+        // if(size == INIT_CAPACITY)
+        // {
+        //     error;
+        // }
 
         for(int i = size - 1; i >= 0; i--)
         {
-            array[i + 1] = array[i]
+            array[i + 1] = array[i];
         }
 
         array[0] = e; 
@@ -86,14 +84,14 @@ public class ListaArreglo<T> implements Lista<T>
      * Agrega en cualquier posición de la lista
      */
     @Override
-    public void add(int index, T e)
+    public void addIndice(int index, T e)
     {
         if(size == INIT_CAPACITY)
         {
             System.out.println("Error: Lista llena");
         } 
         
-        for(int i = size - 1; i <= index; i--)
+        for(int i = size - 1; index <= i; i--)
         {
             array[i + 1] = array[i];
         }
@@ -102,11 +100,35 @@ public class ListaArreglo<T> implements Lista<T>
         size++;
     }
 
+    @Override 
+    public void addFinal(T e)
+    {   
+        array[size] = e;
+        size++;
+
+    }
+
+    @Override 
+    public T removeInicio()
+    {
+        T dato = array[0];
+
+        array[0] = null;
+
+        for(int i = 0; i < size; i++)
+        {
+            array[i] = array[i + 1];
+        }
+
+        size--;
+        return dato;
+    }
+
     /**
      * Remueve en cualquier posición de la lista
      */
     @Override
-    public T remove(int index)
+    public T removeIndice(int index)
     {
         if(size == 0)
         {
@@ -125,6 +147,30 @@ public class ListaArreglo<T> implements Lista<T>
         return dato;
     }
 
+    @Override 
+    public T removeFinal()
+    {
+        T dato = array[size - 1];
+        array[size - 1] = null;
+        size--;
+        return dato; 
+    }
+
+    @Override 
+    public boolean removeSearch(T e)
+    {
+        for (int i = 0; i < array.length; i++) 
+        {
+            if (array[i].equals(e)) 
+            {
+                removeIndice(i); 
+                return true;   
+            }    
+        }
+
+        return false;
+    }
+
     @Override
     public boolean contains(T e)
     {
@@ -139,44 +185,6 @@ public class ListaArreglo<T> implements Lista<T>
         return false;
     }
 
-    /**
-     * Agrega adelante de la lista
-     */
-    @Override
-    public void add(T e)
-    {
-        if(size == INIT_CAPACITY)
-        {
-            System.out.println("Error: Lista llena");
-        } 
-        
-        for(int i = size - 1; 0 <= i; i--)
-        {
-            array[i + 1] = array[i];
-        }
-        size++;
-        array[0] = e;
-    }
-
-    @Override
-    public boolean remove(T e)
-    {
-        if(size == 0)
-        {
-            System.out.println("Error: Lista vacia");
-        }
-
-        for(int i = 0; i < size - 1; i++)
-        {
-            if(array[i] == e)
-            {
-                remove(i);
-                return true;
-            }
-        }
-
-        return false;
-    }
 
     @Override
     public int indexOf(T e)
@@ -195,11 +203,12 @@ public class ListaArreglo<T> implements Lista<T>
         return indice;
     }
 
-    private String toString()
+    @Override
+    public String toString()
     {
         String res = "[";
         
-        for(int i = 0; i < size - 1; i++)
+        for(int i = 0; i < size; i++)
         {
             res += array[i].toString();
             if(i < size - 1)
@@ -212,7 +221,8 @@ public class ListaArreglo<T> implements Lista<T>
         return res;
     }
 
-    private boolean repOk()
+    @Override
+    public boolean repOK()
     {
         for(int i = 0; i < size - 1; i++)
         {
@@ -223,7 +233,7 @@ public class ListaArreglo<T> implements Lista<T>
         }
         
         int contador = 0;
-        for(int i = 0; i < size - 1; i++)
+        for(int i = 0; i < size; i++)
         {
             contador++;
         }
