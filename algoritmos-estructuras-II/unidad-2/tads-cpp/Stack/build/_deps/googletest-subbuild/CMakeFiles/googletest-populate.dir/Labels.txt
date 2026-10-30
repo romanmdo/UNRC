@@ -1,0 +1,14 @@
+# Target labels
+ googletest-populate
+# Source files and their labels
+/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate
+/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule
+/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule
+/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule
+/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule
+/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule
+/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule
+/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule
+/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule
+/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule
+/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule

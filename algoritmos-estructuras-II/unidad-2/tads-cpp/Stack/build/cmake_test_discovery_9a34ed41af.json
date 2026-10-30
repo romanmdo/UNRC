@@ -1,0 +1,27 @@
+{
+  "tests": 3,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "StackTest",
+      "tests": 3,
+      "testsuite": [
+        {
+          "name": "TestConstructorCreatesEmptyStackRepOK",
+          "file": "\/home\/romanmdo\/Escritorio\/UNRC\/algoritmos-estructuras-II\/unidad-2\/tads-cpp\/Stack\/tests\/tads\/StackTest.cpp",
+          "line": 6
+        },
+        {
+          "name": "TestPushTwoElementsRepOK",
+          "file": "\/home\/romanmdo\/Escritorio\/UNRC\/algoritmos-estructuras-II\/unidad-2\/tads-cpp\/Stack\/tests\/tads\/StackTest.cpp",
+          "line": 22
+        },
+        {
+          "name": "TestPopReturnsTopAndReducesSize",
+          "file": "\/home\/romanmdo\/Escritorio\/UNRC\/algoritmos-estructuras-II\/unidad-2\/tads-cpp\/Stack\/tests\/tads\/StackTest.cpp",
+          "line": 38
+        }
+      ]
+    }
+  ]
+}

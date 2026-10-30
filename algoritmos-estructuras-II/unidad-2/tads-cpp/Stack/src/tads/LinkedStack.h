@@ -1,0 +1,91 @@
+#ifndef LINKEDSTACK_H
+#define LINKEDSTACK_H
+
+#include "Stack.h"
+#include <stdexcept>
+#include <sstream>
+#include <vector>
+
+template <typename T>
+class LinkedStack : public Stack<T> {
+private:
+    struct Node {
+        T item;
+        Node* next;
+        Node(T val) : item(val), next(nullptr) {}
+    };
+
+    Node* top_; // Equivale al 'top' o 'first'[cite: 5, 6]
+    int size_;
+
+public:
+    LinkedStack() {
+        top_ = nullptr;
+        size_ = 0;
+    }
+
+    ~LinkedStack() override {
+        // Hay que liberar todos los nodos manualmente al destruir la clase
+        while (!isEmpty()) {
+            pop();
+        }
+    }
+
+    void push(T item) override {
+        // TODO: Crear un nuevo nodo. Hacer que su 'next' apunte al 'top_' actual[cite: 5, 6].
+        // Actualizar 'top_' para que sea el nuevo nodo e incrementar size_[cite: 5, 6].
+    }
+
+    T pop() override {
+        // TODO: Validar isEmpty(). Guardar el valor de 'top_', 
+        // mover 'top_' al siguiente nodo, borrar el nodo viejo y decrementar size_[cite: 5, 6].
+        return T(); // Placeholder
+    }
+
+    T top() const override {
+        // TODO: Validar isEmpty(). Retornar top_->item[cite: 5, 6].
+        return T(); // Placeholder
+    }
+
+    int size() const override {
+        return size_;
+    }
+
+    bool isEmpty() const override {
+        return top_ == nullptr; // o size_ == 0[cite: 5, 6]
+    }
+
+    std::string toString() const override {
+        // Simulando la logica iterativa para imprimir el array[cite: 5]
+        std::vector<T> temp;
+        Node* curr = top_;
+        while (curr != nullptr) {
+            temp.push_back(curr->item);
+            curr = curr->next;
+        }
+        
+        std::stringstream ss;
+        ss << "[";
+        for (int i = temp.size() - 1; i >= 0; i--) { // Invertimos para simular output de ArrayStack
+            ss << temp[i];
+            if (i > 0) ss << ", ";
+        }
+        ss << "]";
+        return ss.str();
+    }
+
+    bool repOK() const override {
+        if (size_ < 0) return false;
+        
+        int count = 0;
+        Node* curr = top_;
+        while (curr != nullptr && count <= size_) {
+            count++;
+            curr = curr->next;
+        }
+        
+        return count == size_ && curr == nullptr;
+    }
+};
+
+#endif
