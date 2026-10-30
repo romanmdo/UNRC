@@ -53,7 +53,6 @@ public:
             throw std::invalid_argument("La pila esta vacia");
         }
 
-        
         T elemento = array[size_ - 1];
 
         // Al hacer size--, el elemento anterior queda inaccesible.

@@ -32,19 +32,31 @@ public:
     }
 
     void push(T item) override {
-        // TODO: Crear un nuevo nodo. Hacer que su 'next' apunte al 'top_' actual[cite: 5, 6].
-        // Actualizar 'top_' para que sea el nuevo nodo e incrementar size_[cite: 5, 6].
+        Node* nuevoNodo = new Node(item);
+        Node* oldtop_ = top_;
+        top_ = nuevoNodo;
+        top_->next = oldtop_;
+        size_++;
     }
 
     T pop() override {
-        // TODO: Validar isEmpty(). Guardar el valor de 'top_', 
-        // mover 'top_' al siguiente nodo, borrar el nodo viejo y decrementar size_[cite: 5, 6].
-        return T(); // Placeholder
+        if (isEmpty())
+        {
+            throw std::invalid_argument("La pila esta vacia");
+        }
+
+        Node* nodoDelete = top_;
+        
+        T elemento = top_->item;
+        top_ = top_->next;
+        delete nodoDelete;
+        size_--;
+        return T(elemento);
     }
 
     T top() const override {
-        // TODO: Validar isEmpty(). Retornar top_->item[cite: 5, 6].
-        return T(); // Placeholder
+        T elemento = top_->item;
+        return T(elemento);
     }
 
     int size() const override {
@@ -52,7 +64,7 @@ public:
     }
 
     bool isEmpty() const override {
-        return top_ == nullptr; // o size_ == 0[cite: 5, 6]
+        return top_ == nullptr; 
     }
 
     std::string toString() const override {
