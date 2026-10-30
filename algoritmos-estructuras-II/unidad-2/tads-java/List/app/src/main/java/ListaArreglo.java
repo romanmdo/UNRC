@@ -10,6 +10,24 @@ public class ListaArreglo<T> implements Lista<T>
         array = (T[]) new Object[INIT_CAPACITY];
     }
 
+    private void resize(int capacity)
+    {
+        if (capacity <= size()) {
+            throw new IllegalArgumentException("El nuevo arreglo es más largo que el tamaño actual.");          
+        }
+
+        T[] copy = (T[]) new Object[capacity];
+        for (int i = 0; i < size; i++) 
+        {
+            copy[i] = array[i];    
+        }
+    }
+
+    private int size()
+    {
+        return size;
+    }
+
     @Override
     public T setInicio(T e)
     {
@@ -21,7 +39,7 @@ public class ListaArreglo<T> implements Lista<T>
     @Override 
     public T setIndice(int indice, T e)
     {
-        if(indice >= INIT_CAPACITY)
+        if(indice >= array.length)
         {
             throw new IllegalArgumentException("Error: Indice no valido");
         }
@@ -48,7 +66,7 @@ public class ListaArreglo<T> implements Lista<T>
     @Override
     public T getIndice(int indice)
     {
-        if(indice >= INIT_CAPACITY)
+        if(indice >= array.length)
         {
             throw new IllegalArgumentException("Error: Indice no valido");
         }
@@ -66,10 +84,10 @@ public class ListaArreglo<T> implements Lista<T>
     @Override
     public void addInicio(T e)
     {
-        // if(size == INIT_CAPACITY)
-        // {
-        //     error;
-        // }
+        if(size == array.length)
+        {
+            resize(2 * array.length);
+        }
 
         for(int i = size - 1; i >= 0; i--)
         {
@@ -86,10 +104,10 @@ public class ListaArreglo<T> implements Lista<T>
     @Override
     public void addIndice(int index, T e)
     {
-        if(size == INIT_CAPACITY)
+        if(size == array.length)
         {
-            System.out.println("Error: Lista llena");
-        } 
+            resize(2 * array.length);
+        }
         
         for(int i = size - 1; index <= i; i--)
         {
@@ -103,14 +121,23 @@ public class ListaArreglo<T> implements Lista<T>
     @Override 
     public void addFinal(T e)
     {   
+        if(size == array.length)
+        {
+            resize(2 * array.length);
+        }
+        
         array[size] = e;
         size++;
-
     }
 
     @Override 
     public T removeInicio()
     {
+        if(size == 0)
+        {
+            System.out.println("Error: Lista vacia");
+        }
+
         T dato = array[0];
 
         array[0] = null;
@@ -150,6 +177,11 @@ public class ListaArreglo<T> implements Lista<T>
     @Override 
     public T removeFinal()
     {
+        if(size == 0)
+        {
+            System.out.println("Error: Lista vacia");
+        }
+        
         T dato = array[size - 1];
         array[size - 1] = null;
         size--;
@@ -159,6 +191,11 @@ public class ListaArreglo<T> implements Lista<T>
     @Override 
     public boolean removeSearch(T e)
     {
+        if(size == 0)
+        {
+            System.out.println("Error: Lista vacia");
+        }
+        
         for (int i = 0; i < array.length; i++) 
         {
             if (array[i].equals(e)) 
@@ -174,6 +211,11 @@ public class ListaArreglo<T> implements Lista<T>
     @Override
     public boolean contains(T e)
     {
+        if(size == 0)
+        {
+            System.out.println("Error: Lista vacia");
+        }
+        
         for(int i = 0; i < size; i++)
         {
             if(array[i] == e)
@@ -189,6 +231,11 @@ public class ListaArreglo<T> implements Lista<T>
     @Override
     public int indexOf(T e)
     {
+        if(size == 0)
+        {
+            System.out.println("Error: Lista vacia");
+        }
+        
         int indice = -1;
 
         for(int i = 0; i < size - 1; i++)
