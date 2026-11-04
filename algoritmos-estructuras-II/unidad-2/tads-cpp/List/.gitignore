@@ -1,0 +1,40 @@
+# ---------------------------------------------------
+# 1. Directorios de compilación (La regla de oro)
+# ---------------------------------------------------
+build/
+out/
+bin/
+lib/           # (Solo si la usás para archivos autogenerados)
+
+# ---------------------------------------------------
+# 2. Archivos autogenerados por CMake y CTest
+# ---------------------------------------------------
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+*_discovery.cmake
+*_include.cmake
+*_tests.cmake
+
+# ---------------------------------------------------
+# 3. Binarios, objetos y ejecutables compilados
+# ---------------------------------------------------
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.out
+MiPrograma     # Tu ejecutable principal
+TestsPila      # Tu ejecutable de tests
+
+# ---------------------------------------------------
+# 4. Archivos locales de Sistema Operativo e IDEs
+# ---------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/       # Ignora configuraciones locales de tu editor
+.idea/

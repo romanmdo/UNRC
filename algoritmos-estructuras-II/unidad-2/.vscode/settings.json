@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack"
+    "cmake.sourceDirectory": "/home/romanmdo/Escritorio/UNRC/algoritmos-estructuras-II/unidad-2/tads-cpp/Stack",
+    "java.compile.nullAnalysis.mode": "automatic"
 }

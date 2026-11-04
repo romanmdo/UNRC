@@ -64,94 +64,6 @@ public class Main {
     }
 
     /**
-     * Método para eliminar a un provedor
-     * dado su CUIT por consola.
-     * @param connection
-     * @return void
-     */
-    public static void eliminarProveedor(Connection connection, Scanner scan)
-    {
-        try {
-             // Limpiar el buffer residual del menú.
-            scan.nextLine(); 
-
-            connection.setAutoCommit(false);
-            
-            // Nos guardamos el CUIT del Proveedor Ingresado.
-            System.out.print("Ingrese el CUIT del Proveedor: ");
-            String cuitBuscado = scan.nextLine();
-
-            // Creamos el statement.
-           
-            String query = "DELETE FROM proveedor WHERE cuit = ?";
-
-            // Retorna un nuevo objeto PreparedStatement,
-            // el cual, representa la sentencia SQL (query).
-            PreparedStatement pstmt = connection.prepareStatement(query);
-            
-            // El 1er '?' va a guardar el CUIT.
-            pstmt.setString(1, cuitBuscado);
-
-            // Ejecutamos la consulta, 
-            // la cual va a modificar nuestra
-            // Base de datos.
-            pstmt.executeUpdate();
-
-            // Liberamos los recursos que
-            // estabamos utilizando
-            pstmt.close();
-            connection.commit();
-
-            System.out.print("Proveedor eliminado con exito!");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Método estatico para listar todos 
-     * los proveedores que tengamos cargados
-     * en nuestra base de datos.
-     * @param connection
-     * @return void
-     */
-    public static void listarProveedores(Connection connection)
-    {
-        try {
-            System.out.println("Listado de proveedores: \n");
-            
-            // Creamos el statement.
-            Statement statement = connection.createStatement();
-            String query = "SELECT * FROM proveedor";
-
-            // Creamos el conjunto con los proveedores.
-            ResultSet resultSet = statement.executeQuery(query);
-
-            while (resultSet.next()) 
-            {
-                String cuit = resultSet.getString("cuit");
-                String razonSocial = resultSet.getString("razon_social");
-                String direccion = resultSet.getString("direccion");
-                int telefono = resultSet.getInt("telefono_fijo"); 
-            
-                System.out.println("CUIT: " + cuit + " | Razón Social: " + razonSocial + " | Dir: " + direccion + " | Tel: " + telefono);
-            }
-
-            // Liveramos el resultSet.
-            resultSet.close();
-
-            // Liberamos el statement.
-            statement.close();
-
-        } catch (Exception e) {
-            // En caso de que haya error, lo mostramos.
-            e.printStackTrace();
-        }   
-    }
-
-    
-    /**
      * Método para insertar proveedores a 
      * nuestra Base de Datos.
      * @param connection
@@ -227,7 +139,6 @@ public class Main {
             pstmt2.setString(1, cuit);
             pstmt2.setString(2, celular);
             pstmt2.executeUpdate();
-            pstmt2.close();
             
             // Confirmamos la transaccion, es decir,
             // hacemos permanentes los cambios en nuestra
@@ -253,4 +164,94 @@ public class Main {
             }
         }
     }
+
+    /**
+     * Método para eliminar a un provedor
+     * dado su CUIT por consola.
+     * @param connection
+     * @return void
+     */
+    public static void eliminarProveedor(Connection connection, Scanner scan)
+    {
+        try {
+            // Limpiar el buffer residual del menú.
+            scan.nextLine(); 
+
+            connection.setAutoCommit(false);
+            
+            // Nos guardamos el CUIT del Proveedor Ingresado.
+            System.out.print("Ingrese el CUIT del Proveedor: ");
+            String cuitBuscado = scan.nextLine();
+
+            // Creamos el statement.
+           
+            String query = "DELETE FROM proveedor WHERE cuit = ?";
+
+            // Retorna un nuevo objeto PreparedStatement,
+            // el cual, representa la sentencia SQL (query).
+            PreparedStatement pstmt = connection.prepareStatement(query);
+            
+            // El 1er '?' va a guardar el CUIT.
+            pstmt.setString(1, cuitBuscado);
+
+            // Ejecutamos la consulta, 
+            // la cual va a modificar nuestra
+            // Base de datos.
+            pstmt.executeUpdate();
+
+            // Liberamos los recursos que
+            // estabamos utilizando
+            pstmt.close();
+            connection.commit();
+
+            System.out.print("Proveedor eliminado con exito!");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Método estatico para listar todos 
+     * los proveedores que tengamos cargados
+     * en nuestra base de datos.
+     * @param connection
+     * @return void
+     */
+    public static void listarProveedores(Connection connection)
+    {
+        try {
+            System.out.println("Listado de proveedores: \n");
+            
+            // Creamos el statement.
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM proveedor";
+
+            // Creamos el conjunto con los proveedores.
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) 
+            {
+                String cuit = resultSet.getString("cuit");
+                String razonSocial = resultSet.getString("razon_social");
+                String direccion = resultSet.getString("direccion");
+                int telefono = resultSet.getInt("telefono_fijo"); 
+            
+                System.out.println("CUIT: " + cuit + " | Razón Social: " + razonSocial + " | Dir: " + direccion + " | Tel: " + telefono);
+            }
+
+            // Liberamos el resultSet.
+            resultSet.close();
+
+            // Liberamos el statement.
+            statement.close();
+
+        } catch (Exception e) {
+            // En caso de que haya error, lo mostramos.
+            e.printStackTrace();
+        }   
+    }
+
+    
+
 }
