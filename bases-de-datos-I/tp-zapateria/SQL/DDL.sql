@@ -103,12 +103,12 @@ CREATE TABLE venta(
 	porcentaje_descuento FLOAT NOT NULL,
 	
 	CONSTRAINT pk_venta PRIMARY KEY(nro_factura),
-	CONSTRAINT fk_vendedor FOREIGN KEY (dni_vendedor) REFERENCES vendedor(dni_vendedor) 
-	ON DELETE CASCADE
+	CONSTRAINT fk_vendedor FOREIGN KEY (nro_vendedor) REFERENCES vendedor(nro_vendedor) 
+	ON DELETE RESTRICT
 	ON UPDATE CASCADE,
 	
 	CONSTRAINT fk_cliente_venta FOREIGN KEY (dni) REFERENCES cliente(dni)
-	ON DELETE CASCADE
+	ON DELETE RESTRICT
 	ON UPDATE CASCADE,
 	
 	CONSTRAINT check_descuento1 CHECK (porcentaje_descuento >= 0 AND porcentaje_descuento < 100)
@@ -143,7 +143,10 @@ CREATE TABLE tiene_talle(
 	
 	CONSTRAINT fk_talle FOREIGN KEY(nro_talle) REFERENCES talle(nro_talle)
 	ON DELETE CASCADE
-	ON UPDATE CASCADE
+	ON UPDATE CASCADE,
+
+	CONSTRAINT check_precio CHECK (precio > 0 AND precio < 200000),
+	CONSTRAINT check_cantidad CHECK (cantidad > 0)
 
 );
 
@@ -183,7 +186,7 @@ CREATE TABLE contiene(
 	ON DELETE CASCADE
 	ON UPDATE CASCADE,
 	
-	CONSTRAINT check_precio CHECK (precio_venta < 200000)
+	CONSTRAINT check_precio_venta CHECK (precio_venta < 200000)
 );
 
 CREATE TABLE asiste(
@@ -262,6 +265,10 @@ INSERT INTO talle (nro_talle) VALUES
     (40),
     (42),
     (43);
+
+INSERT INTO tiene_talle (color, modelo, nro_talle, cantidad, precio) VALUES ( 
+	'Marron', 'Zapato Vestir', 37, 4, 50000
+);
 
 INSERT INTO cliente (dni, nombre, apellido, direccion) VALUES
     (48252234, 'Francisco', 'Muñoz', 'Pedernera 271'),
