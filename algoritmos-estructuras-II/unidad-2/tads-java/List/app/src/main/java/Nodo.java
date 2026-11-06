@@ -1,11 +1,13 @@
 public class Nodo<T>
 {
-    private T item;
-    private Nodo<T> prev; 
-    private Nodo<T> next;
+    T item;
+    Nodo<T> prev; 
+    Nodo<T> next;
 
     public Nodo(T e)
     {
+        this.prev = null;
+        this.next = null;
         this.item = e;
     }
 }
