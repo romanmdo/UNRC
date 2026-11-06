@@ -10,6 +10,7 @@ public class ListaArreglo<T> implements Lista<T>
         array = (T[]) new Object[INIT_CAPACITY];
     }
 
+    @SuppressWarnings("unchecked")
     private void resize(int capacity)
     {
         if (capacity <= size()) {
